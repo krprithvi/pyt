@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block startpage %}
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Add material</h3>
+            </div>
+            <div class="panel-body">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+            <li class="active"><a href="#tut" data-toggle="tab">Add Tutorial</a></li>
+            <li><a href="#quiz" data-toggle="tab">Add Quizzler</a>
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="tab-pane active" id="tut">
+            <form role='form' method='post'>
+                {{ form.hidden_tag() }}
+                <table class='table'>
+                <thead>
+                <tr>
+                    <th><label for='name'>Tutorial name</label></th>
+                    <th>{{ form.name(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='content'>Content</label></th>
+                    <th>{{ form.content(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='question'>Question</label></th>
+                    <th>{{ form.question(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='answer'>Answer</label></th>
+                    <th>{{ form.answer(class_='form-control') }}</th>
+                </tr>
+                <tr><th><button type="submit" class="btn btn-primary btn-lg">Add tutorial</button></th></tr>
+                </thead>
+                </table>
+            </form>
+            </div>
+            <div class="tab-pane" id="quiz">
+            <form role='form' method='post'>
+                {{ qform.hidden_tag() }}
+                <table class='table'>
+                <thead>
+                <tr>
+                    <th><label for='name'>Quiz name</label></th>
+                    <th>{{ qform.name(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='question'>Question</label></th>
+                    <th>{{ qform.question(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='answer'>Answer</label></th>
+                    <th>{{ qform.answer(class_='form-control') }}</th>
+                </tr>
+                <tr><th><button type="submit" class="btn btn-primary btn-lg">Add Quiz</button></th></tr>
+                </thead>
+                </table>
+             </form>
+            </div>
+        </div>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        </div>
+{% endblock %}

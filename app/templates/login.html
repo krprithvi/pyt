@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block startpage %}
+      <div class="page-header">
+        <h1>Log in and kickstart your python course</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Login details</h3>
+            </div>
+            <div class="panel-body">
+            <form role='form' method='post'>
+                {{ form.hidden_tag() }}
+                <table class='table'>
+                <thead>
+                <tr>
+                    <th><label for='email'>Email</label></th>
+                    <th>{{ form.email(class_='form-control') }}</th>
+                </tr>
+                <tr>
+                    <th><label for='password'>Password</label></th>
+                    <th>{{ form.password(class_='form-control') }}</th>
+                </tr>
+                <tr><th><button type="submit" class="btn btn-primary btn-lg">Log in</button></th></tr>
+                <tr><th><a href='{{url_for("register")}}'>New user?</a></th></tr>
+                </thead>
+                </table>
+            </form>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-7">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">What can i learn in the course ?</h3>
+            </div>
+            <div class="panel-body">
+              This course will provide a familiarity with the basics of Python programming. The purpose of the course will not be to dive deep into python coding. This will provide the foundation for further learning. You are required to solve quiz questions to progress to the next tutorial. The most fun is the Quizzler round where you will be facing mind-boggling puzzles. Have fun !
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+      </div>
+{% endblock %}

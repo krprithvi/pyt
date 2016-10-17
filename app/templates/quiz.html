@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block startpage %}
+      <div class="page-header">
+        <h1>{{ quiz.name }}</h1>
+      </div>
+      <div class="row" style='margin: 5px 0px'>
+        <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ quiz.name }}</h3>
+            </div>
+            <div class="panel-body">
+            <p>{{ quiz.question|safe }}</p>
+            <div class="alert alert-info" role="alert">
+                    <strong>Heads up!</strong> Enter the answer and click on submit to verify the answer.
+            </div>
+            <form role='form' method='post'>
+                {{ form.hidden_tag() }}
+                {{ form.answer }}
+            <button type="submit" class="btn btn-primary btn-lg">Unlock</button>
+            </form>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+	<div class="col-sm-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sandbox</h3>
+            </div>
+            <div class="panel-body">
+            <iframe src="https://trinket.io/embed/python/cd73f604ee" width="100%" height=400px frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </div>
+          </div>
+	</div>
+      </div>
+{% endblock %}

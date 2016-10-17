@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block startpage %}
+<div class="page-header">
+<h1>What is python ?</h1>
+</div>
+<h4>
+Python is a general purpose, high level programming language. The design philosophy revolves around <b>readability</b>. The programming language is designed to be cross-platform. CPython, the reference implementation of Python, is free and open-source software and has a community-based development model and is managed by Python Software Foundation
+</h4> 
+<h3 class="lead">The creator of python is <b>Guido Van Rossum</b></h3>
+<blockquote><p>"Over six years ago, in December 1989, I was looking for a "hobby" programming project that would keep me occupied during the week around Christmas. My office ... would be closed, but I had a home computer, and not much else on my hands. I decided to write an interpreter for the new scripting language I had been thinking about lately: a descendant of ABC that would appeal to Unix/C hackers. I chose Python as a working title for the project, being in a slightly irreverent mood (and a big fan of Monty Python's Flying Circus)"</p><p><small>Guido Van Rossum about the origin of python in 1996</small></p></blockquote>
+  <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Benevolent dictator for life</h3>
+            </div>
+            <div class="panel-body">
+            Van Rossum is Python's principal author, and his continuing central role in deciding the direction of Python is reflected in the title given to him by the Python community, benevolent dictator for life (BDFL)
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">How was the name "Python" adopted for the language ?</h3>
+            </div>
+            <div class="panel-body">
+            Guido is a fan of the Monty Python's Flying Circus, a comedy series from the seventies. 
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">Zen of python, by Tim Peters</h3>
+            </div>
+            <div class="panel-body">
+           The core philosophy of the language is summarized by the document "PEP 20 (The Zen of Python)", which includes aphorisms such as, "Beautiful is better than ugly" and "Simple is better than complex".
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+<div class="col-lg-1 col-centered">
+{% if g.user.is_authenticated() %}
+<a href="tutorial/{{ g.user.custom_data["tutno"] }}" class="btn btn-lg btn-primary">
+{{ g.user.name }}Start the tutorial
+</a>
+{% else %}
+<a href="{{ url_for('login') }}" class="btn btn-lg btn-primary">
+Start the tutorial
+</a>
+{% endif %}
+</div>
+{% endblock %}
